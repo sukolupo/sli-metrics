@@ -1,6 +1,6 @@
 #!/bin/python
 from flask import Flask, Response
-from modules.exporter import setup_metrics
+import modules.exporter
 
 app = Flask(__name__)
 
