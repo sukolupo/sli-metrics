@@ -1,6 +1,6 @@
 #!/bin/python
 from flask import Flask, Response
-import modules.exporter
+from modules.exporter import process_metrics
 
 app = Flask(__name__)
 
@@ -12,7 +12,8 @@ def hello():
 
 @app.route('/metrics')
 def collect_metrics():
-    return 'rest'
+    #process_metrics()
+    return process_metrics()
 
 @app.errorhandler(500)
 def handle_500(error):

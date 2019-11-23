@@ -33,6 +33,8 @@ def process_metrics(metric_dir="../metrics", pattern=".metric"):
 
         continue
 
+        return m
+
 
 def add_description(m_name,  m_desc, m_type, m_comment):
     template = "# HELP {0} {1}</br># TYPE {0} {2}</br># {3}"
