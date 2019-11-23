@@ -4,7 +4,7 @@ import modules.exporter
 
 app = Flask(__name__)
 
-setup_metrics(app)
+# setup_metrics(app)
 
 @app.route('/')
 def hello():
