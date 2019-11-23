@@ -12,8 +12,9 @@ def hello():
 
 @app.route('/metrics')
 def collect_metrics():
-    #process_metrics()
-    return process_metrics()
+    m = []
+    m = process_metrics(app)
+    return m
 
 @app.errorhandler(500)
 def handle_500(error):

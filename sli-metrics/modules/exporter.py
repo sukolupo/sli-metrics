@@ -9,7 +9,7 @@ from prometheus_client import multiprocess, CollectorRegistry
 
 CONTENT_TYPE_LATEST = str('text/plain; version=0.0.4; charset=utf-8')
 
-def process_metrics(metric_dir="../metrics", pattern=".metric"):
+def process_metrics(app, metric_dir="./metrics", pattern=".metric"):
     directory = pathlib.Path(metric_dir)
     m = []
 
@@ -33,7 +33,7 @@ def process_metrics(metric_dir="../metrics", pattern=".metric"):
 
         continue
 
-        return m
+    return m
 
 
 def add_description(m_name,  m_desc, m_type, m_comment):
