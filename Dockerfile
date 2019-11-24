@@ -14,10 +14,11 @@ EXPOSE 80
 WORKDIR /app
 ADD . /app
 
-RUN apk add --no-cache --virtual .build-deps python3-dev && \
+RUN apk add --no-cache --virtual .build-deps python3-dev gcc libffi-dev openssl-dev && \
     apk add --no-cache --update python3
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
+RUN apk remove .build-deps
 #CMD ["python3", "-m", "sli-metrics"]
 
 CMD ["/usr/bin/uwsgi", "--http", ":80", "--manage-script-name", "--mount", "/=sli-metrics:app"]
