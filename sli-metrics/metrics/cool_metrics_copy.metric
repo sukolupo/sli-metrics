@@ -1,3 +1,3 @@
-this is a cool another metric;counter;This is a comment;cluster='test-cluster.domain', host='my-host-1.domain';123
-this is a cool another metric;counter;This is a comment;cluster='test-cluster.domain', host='my-host-2.domain';2345
-this is a cool another metric;counter;This is a comment;cluster='test-cluster.domain', host='my-host-3.domain';1124
+this is a cool another metric;counter;This is a comment;cluster="test-cluster.domain", host="my-host-1.domain";123
+this is a cool another metric;counter;This is a comment;cluster="test-cluster.domain", host="my-host-2.domain";2345
+this is a cool another metric;counter;This is a comment;cluster="test-cluster.domain", host="my-host-3.domain";1124
