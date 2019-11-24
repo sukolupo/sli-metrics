@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  sli-metrics:
+    image: sli-metrics
+    build: .
+    ports:
+      - 9199:80
+    volumes: 
+      - /metrics:/app/sli-metrics/metrics
+    environment:
+      FLASK_APP: sli-metrics:app
+      FLASK_ENV: production
