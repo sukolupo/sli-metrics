@@ -3,7 +3,8 @@
 # OS Support also exists for jessie & stretch (slim and full).
 # See https://hub.docker.com/r/library/python/ for all supported Python
 # tags from Docker Hub.
-FROM python:alpine
+#FROM python:alpine
+FROM alpine:latest
 
 # If you prefer miniconda:
 #FROM continuumio/miniconda3
@@ -14,8 +15,9 @@ EXPOSE 80
 WORKDIR /app
 ADD . /app
 
-RUN apk add --no-cache --virtual .build-deps python3-dev gcc libc-dev libffi-dev openssl-dev && \
-    apk add --no-cache --update python3
+RUN apk add --no-cache python3
+RUN apk add --no-cache --virtual .build-deps  python3-dev gcc libc-dev libffi-dev openssl-dev py3-pip
+ 
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
 RUN apk del .build-deps
