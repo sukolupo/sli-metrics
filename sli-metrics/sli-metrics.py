@@ -16,6 +16,8 @@ def collect_metrics():
     for i in process_metrics(app):
         m += i 
 
+    r = Response(response=m, status=200, mimetype="application/xml")    
+    r.headers["Content-Type"] = "text/xml; charset=utf-8"
     return m
 
 @app.errorhandler(500)
