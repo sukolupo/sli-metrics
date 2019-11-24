@@ -15,7 +15,7 @@ WORKDIR /app
 ADD . /app
 
 RUN apk add --no-cache --virtual .build-deps python3-dev && \
-    apk add --no-cache --update python3 && \
+    apk add --no-cache --update python3
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
 #CMD ["python3", "-m", "sli-metrics"]
