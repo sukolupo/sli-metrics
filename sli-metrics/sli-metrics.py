@@ -19,7 +19,7 @@ def collect_metrics():
 
     r = Response(response=m, status=200, mimetype="application/xml")    
     r.headers["Content-Type"] = CONTENT_TYPE_LATEST
-    return m
+    return r
 
 @app.errorhandler(500)
 def handle_500(error):
