@@ -27,3 +27,8 @@ this is a cool another metric;counter;This is a comment;cluster="test-cluster.do
 
 See [here](sli-metrics/metrics) for more examples
 
+## Building the Container
+```
+docker build --tag sli-metrics .
+docker run --name sli_metrics  -d -p 5000:80 sli-metrics:latest
+```
