@@ -14,7 +14,7 @@ EXPOSE 80
 WORKDIR /app
 ADD . /app
 
-RUN apk add --no-cache --virtual .build-deps python3-dev gcc libffi-dev openssl-dev && \
+RUN apk add --no-cache --virtual .build-deps python3-dev gcc libc-dev libffi-dev openssl-dev && \
     apk add --no-cache --update python3
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
