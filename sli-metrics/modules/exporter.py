@@ -37,12 +37,12 @@ def process_metrics(app, metric_dir="./metrics", pattern=".metric"):
 
 
 def add_description(m_name,  m_desc, m_type, m_comment):
-    template = "# HELP {0} {1}\n# TYPE {0} {2}\n# {3}\n"
+    template = "# HELP {0} {1}</br># TYPE {0} {2}</br># {3}</br>"
 
     return template.format(m_name, m_desc, m_type, m_comment)
 
 
 def add_metric(m_name, m_label, m_value):
-    template="{0}{{{1}}} {2}\n"
+    template="{0}{{{1}}} {2}</br>"
     return template.format(m_name, m_label, m_value)
 
