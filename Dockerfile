@@ -18,7 +18,7 @@ RUN apk add --no-cache --virtual .build-deps python3-dev gcc libc-dev libffi-dev
     apk add --no-cache --update python3
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
-RUN apk remove .build-deps
+RUN apk del .build-deps
 #CMD ["python3", "-m", "sli-metrics"]
 
 CMD ["/usr/bin/uwsgi", "--http", ":80", "--manage-script-name", "--mount", "/=sli-metrics:app"]
