@@ -14,11 +14,12 @@ EXPOSE 80
 WORKDIR /app
 ADD . /app
 
-RUN yum install python3-devel
+RUN apk add --no-cache --virtual .build-deps python3-dev && \
+    apk add --no-cache --update python3 && \
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
 #CMD ["python3", "-m", "sli-metrics"]
-RUN yum remove python3-devel
+
 CMD ["/usr/bin/uwsgi", "--http", ":80", "--manage-script-name", "--mount", "/=sli-metrics:app"]
 
 # Using pipenv:
