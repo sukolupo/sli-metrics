@@ -14,9 +14,11 @@ EXPOSE 80
 WORKDIR /app
 ADD . /app
 
+RUN yum install python3-devel
 # Using pip:
 RUN python3 -m pip install -r requirements.txt
 #CMD ["python3", "-m", "sli-metrics"]
+RUN yum remove python3-devel
 CMD ["/usr/bin/uwsgi", "--http", ":80", "--manage-script-name", "--mount", "/=sli-metrics:app"]
 
 # Using pipenv:
