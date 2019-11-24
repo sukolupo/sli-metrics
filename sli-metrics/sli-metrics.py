@@ -3,6 +3,7 @@ from flask import Flask, Response
 from modules.exporter import process_metrics
 
 app = Flask(__name__)
+CONTENT_TYPE_LATEST = str('text/plain; version=0.0.4; charset=utf-8')
 
 # setup_metrics(app)
 
@@ -17,7 +18,7 @@ def collect_metrics():
         m += i 
 
     r = Response(response=m, status=200, mimetype="application/xml")    
-    r.headers["Content-Type"] = "text/xml; charset=utf-8"
+    r.headers["Content-Type"] = CONTENT_TYPE_LATEST
     return m
 
 @app.errorhandler(500)
