@@ -40,7 +40,8 @@ def add_description(m_name,  m_desc, m_type, m_comment):
     template = """
 # HELP {0} {1}
 # TYPE {0} {2}
-# {3}"""
+# {3}
+"""
 
     return template.format(m_name, m_desc, m_type, m_comment)
 
