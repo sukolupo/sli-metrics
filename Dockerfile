@@ -23,8 +23,8 @@ RUN python3 -m pip install -r requirements.txt
 RUN apk del .build-deps
 #CMD ["python3", "-m", "sli-metrics"]
 
-#CMD ["/usr/bin/uwsgi", "--http", ":80", "--manage-script-name", "--mount", "/app/=sli-metrics:app"]
-CMD ["/usr/bin/uwsgi", "--http", ":80", "--wsgi-file", "/app/sli-metrics/sli-metrics.py"]
+CMD ["/usr/bin/uwsgi", "--http", ":80", "--manage-script-name", "--mount", "/app/sli-metrics=sli-metrics:app"]
+#CMD ["/usr/bin/uwsgi", "--http", ":80", "--wsgi-file", "/app/sli-metrics/sli-metrics.py"]
  
 # Using pipenv:
 #RUN python3 -m pip install pipenv
