@@ -15,7 +15,7 @@ EXPOSE 80
 WORKDIR /app
 ADD . /app
 
-RUN apk add --no-cache python3
+RUN apk add --no-cache python3 sqlite
 RUN apk add --no-cache --virtual .build-deps  python3-dev gcc libc-dev libffi-dev openssl-dev py3-pip
  
 # Using pip:
